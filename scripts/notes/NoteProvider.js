@@ -7,13 +7,15 @@ add a note to the DB
 
 let notes = [];
 
+const eventHub = document.querySelector("#main")
+
 const dispatchStateChangeEvent = () => {
     const noteStateChangedEvent = new CustomEvent("noteStateChanged")
 
     eventHub.dispatchEvent(noteStateChangedEvent)
 }
 
-const getNotes = () => {
+export const getNotes = () => {
     return fetch('http://localhost:8088/notes')
         .then(response => response.json())
         .then(parsedNotes => {
@@ -22,9 +24,8 @@ const getNotes = () => {
 
 }
 
-
-const getNotes = () => {
-	console.log("getNotes called");
+export const useNotes = () => {
+	return notes.slice();
 }
 
 export const saveNote = noteObj => {
@@ -36,7 +37,7 @@ export const saveNote = noteObj => {
 		body: JSON.stringify(noteObj)
 	})
 	.then(() => {
-		getNotes()
+		return getNotes()
 	})
-    // .then(dispatchStateChangeEvent)
+    .then(dispatchStateChangeEvent)
 }
