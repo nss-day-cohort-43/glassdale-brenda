@@ -3,7 +3,7 @@
     which lists all convictions in the Glassdale PD API
  */
 
-import { useConvictions, getConvictions } from "./ConvictionProvider.js"
+import { useOfficers, getOfficers } from "./OfficerProvider.js"
 
 //reference to container that holds all
 const eventHub = document.querySelector("#main");
@@ -11,10 +11,10 @@ const eventHub = document.querySelector("#main");
 //on eventHub, listen for changes
 eventHub.addEventListener("change", event => {
 	//do this if crimeSelect element changes
-	if (event.target.id === "crimeSelect"){
-		const customEvent = new CustomEvent("crimeChosen", {
+	if (event.target.id === "officerSelect"){
+		const customEvent = new CustomEvent("OfficerChosen", {
 			detail: {
-				crimeThatWasChosen: event.target.value,
+				officerThatWasChosen: event.target.value,
 			}
 		})
 
@@ -24,24 +24,24 @@ eventHub.addEventListener("change", event => {
 })
 
 // Get a reference to the DOM element where the <select> will be rendered
-const contentTarget = document.querySelector(".filters__crime")
+const contentTarget = document.querySelector(".filters__officer")
 
-export const ConvictionSelect = () => {
-	getConvictions()
+export const OfficerSelect = () => {
+	getOfficers()
 	.then(() => {
         // Get all convictions from application state
-        const convictionsArray = useConvictions()
-        render(convictionsArray)
+        const officerArray = useOfficers()
+        render(officerArray)
     })
 }
 
-const render = theConvictionsArray => {
+const render = theOfficersArray => {
 	contentTarget.innerHTML = `
-		<select class="dropdown" id="crimeSelect">
-			<option value="0">Please select a crime...</option>
+		<select class="dropdown" id="officerSelect">
+			<option value="0">Please select an officer...</option>
 			${
-                theConvictionsArray.map(convictionObject => {
-                    return `<option value="${ convictionObject.name }">${convictionObject.name}</option>`
+                theOfficersArray.map(officerObject => {
+                    return `<option value="${ officerObject.name }">${officerObject.name}</option>`
                 }).join("")
             }
 		</select>
