@@ -22,7 +22,6 @@ export const NoteList = () => {
         .then(render)
 }
 
-// eventHub.addEventListener("showNotesClicked", NoteList)
 
 eventHub.addEventListener("noteStateChanged", () => {	
     const newNotes = useNotes()
