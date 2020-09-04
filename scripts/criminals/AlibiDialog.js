@@ -21,7 +21,8 @@ eventHub.addEventListener("alibiClicked", customEvent => {
         }).join("")
     }`
 
-    // Show the dialog element
+	// Show the dialog element
+	// dialog and showModel work together
     // contentTarget.showModal() or show()
 })
 
@@ -30,5 +31,10 @@ export const AlibiDialog = (id) => {
 	return `
 		<p class="alibiDialog--${id}">
 		
-        </p>`
+		</p>`
+		
+	// return `
+	// <dialog class="alibiDialog--${id}">
+	// 	<button onclick="closeDialog()">Close dialog</button>
+	// </dialog>`
 }
