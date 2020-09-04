@@ -1,3 +1,60 @@
 body {
 	background-color: lightgoldenrodyellow;
 }
+
+.filters {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+
+#noteFormContainer {
+	background-color: rgb(217, 224, 232);
+	padding: 1em;
+}
+
+#noteFormContainer h1, h2, h3 {
+	color: rgb(80 42 5);
+	margin-top: .02em;
+}
+
+textarea {
+	width: 100%;
+}
+
+
+
+
+.note {
+	margin: 1em auto;
+}
+
+.main-section {
+	display: flex;
+}
+.lists-area {
+	background-color: #ff9e2c;
+	flex: 2;
+	padding: 1rem;
+}
+aside {
+	background-color: #b6701e;
+	flex: 1;
+	padding: 1rem;
+}
+
+.card-criminal {
+	border: solid 1px darkgoldenrod;
+	/* margin: 1em; */
+	min-width: 200px;
+	max-width: 200px;
+
+}
+
+.criminalsContainer {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	padding: 0;
+	margin: 0;
+}

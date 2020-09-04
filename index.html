@@ -11,22 +11,47 @@
 
     <main id="main">
         <header>
+            <h1>Who Done it? @ Glassdale PD</h1>
             <div class="filters">
                 <div class="filter filters__crime"></div>
                 <div class="filter filters__incarceration"></div>
                 <div class="filter filters__officer"></div>
+                <div id="noteFormContainer"></div>
             </div>
+           
         </header>
         
-        <div id="noteFormContainer"></div>
-        <div id="noteListContainer"></div>
+        <div class="main-section">
+            <div class="lists-area">
+                <h2>The Criminals</h2>
+                <section class="criminalsContainer"></section>
 
-        <h2>The Criminals</h2>
-        <section class="criminalsContainer"></section>
+                <h2>The Officers</h2>
+                <section class="officersContainer"></section>
+            </div>
+            <aside>
+                <h2>All The Notes</h2>
+                <div id="noteListContainer"></div>
+            </aside>
+            
 
-        <h2>The Officers</h2>
-        <section class="officersContainer"></section>
+           
     </main>
+
+    <section class="container">
+        <div class="left-half">
+          <article>
+            <h1>Left Half</h1>
+            <p>Weekends don't count unless you spend them doing something completely pointless.</p>
+          </article>
+        </div>
+        <div class="right-half">
+          <article>
+            <h1>Right Half</h1>
+            <p>If your knees aren't green by the end of the day, you ought to seriously re-examine your life.</p>
+          </article>
+        </div>
+      </section>
 
     <script type="module" src="./scripts/main.js"></script>
 </body>
