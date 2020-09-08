@@ -10,7 +10,7 @@ eventHub.addEventListener("associatesClicked", event => {
 	})
 
 	const alibiTarget = document.querySelector(`.alibiDialog--${smoothCriminal.id}`);
-	const hTarget = document.querySelector("h4")
+	const hTarget = alibiTarget.querySelector("h4")
 
 	if (alibiTarget.contains(hTarget)){
 		alibiTarget.innerHTML = ""

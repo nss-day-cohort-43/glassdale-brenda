@@ -1,4 +1,5 @@
 import {AlibiDialog} from './AlibiDialog.js';
+import { WitnessDialog } from './../witness/Witness.js'
 
 const eventHub = document.querySelector("#main");
 
@@ -11,8 +12,17 @@ eventHub.addEventListener("click", event => {
 				chosenCriminal: criminalId
 			}
 		})
-
 		eventHub.dispatchEvent(alibiEvent);
+
+	}else if(event.target.id.startsWith("witness--")){
+		const [prefix, criminalId] = event.target.id.split("--")
+
+		const witnessEvent = new CustomEvent("witnessClicked", {
+			detail: {
+				chosenCriminal: criminalId
+			}
+		})
+		eventHub.dispatchEvent(witnessEvent);
 	}
 })
 
@@ -26,6 +36,7 @@ export const CriminalHTML = (criminalObj) => {
 			<p>Dates:</p>
 			<button id="associates--${criminalObj.id}">Alibis</button>
 			${AlibiDialog(criminalObj.id)}
+			${WitnessDialog(criminalObj.id)}
 		</section>
 	`
 } 
