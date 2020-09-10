@@ -2,8 +2,18 @@ body {
 	background-color: lightgoldenrodyellow;
 }
 
-.filters {
+.header--header{
+ 	margin-bottom:.5em;
+}
+
+.header--main{
 	display: flex;
+	
+}
+
+
+.filters {
+	flex-wrap: wrap;
 	align-items: baseline;
 	justify-content: space-between;
 }
@@ -13,9 +23,9 @@ body {
 	padding: 1em;
 }
 
-#noteFormContainer h1, h2, h3 {
+#noteFormContainer h1, h2, h3, h4 {
 	color: rgb(80 42 5);
-	margin-top: .02em;
+	margin-top: .0;
 }
 
 textarea {

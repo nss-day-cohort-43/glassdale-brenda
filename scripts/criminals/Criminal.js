@@ -1,5 +1,4 @@
 import {AlibiDialog} from './AlibiDialog.js';
-import { WitnessDialog } from './../witness/Witness.js'
 
 const eventHub = document.querySelector("#main");
 
@@ -36,7 +35,6 @@ export const CriminalHTML = (criminalObj) => {
 			<p>Dates:</p>
 			<button id="associates--${criminalObj.id}">Alibis</button>
 			${AlibiDialog(criminalObj.id)}
-			${WitnessDialog(criminalObj.id)}
 		</section>
 	`
 } 

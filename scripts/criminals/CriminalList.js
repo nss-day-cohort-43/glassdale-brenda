@@ -1,7 +1,9 @@
 import {CriminalHTML} from './Criminal.js';
 import {getCriminals, useCriminals} from './CriminalProvider.js';
+import { useWitness } from '../witness/WitnessProvider.js';
 
 const eventHub = document.querySelector("#main");
+
 //the list needs to listen for the custom event
 eventHub.addEventListener("crimeChosen", event => {
 	//get selected one of officer
@@ -29,6 +31,14 @@ eventHub.addEventListener("OfficerChosen", event =>{
 	}else{
 		addCriminalsToDOM(useCriminals())
 	}
+})
+
+eventHub.addEventListener("showAllWitnesses", event => {
+	addCriminalsToDOM(useWitness());
+})
+
+eventHub.addEventListener("showCrimeStuff", event => {
+	addCriminalsToDOM(useCriminals());
 })
 
 export const CriminalList = () => {

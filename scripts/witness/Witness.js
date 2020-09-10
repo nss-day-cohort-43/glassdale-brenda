@@ -3,14 +3,16 @@ import { useCriminals } from "./../criminals/CriminalProvider.js"
 
 const eventHub = document.querySelector("#main")
 
-eventHub.addEventListener("witnessClicked", event => {
-	const smoothCriminal = useCriminals().find(criminal => {
-		return criminal.id === parseInt(event.detail.chosenCriminal)
-	})
-})
+//on eventHub, listen for changes
+eventHub.addEventListener("click", event => {
+	//do this if witness is selected
+	if (event.target.id === "showMeWitness"){
+		const customEvent = new CustomEvent("showAllWitnesses")
 
-export const WitnessDialog = (id) => {
-	return `
-		<span class="witnessDialog--${id}"></span>
-	`
-}
+		//add event to the hub
+		eventHub.dispatchEvent(customEvent)
+	}else if (event.target.id === "showMeCrimeStuff"){
+		const customEvent = new CustomEvent("showCrimeStuff")
+		eventHub.dispatchEvent(customEvent);
+	}
+})
