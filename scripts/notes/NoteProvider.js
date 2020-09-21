@@ -41,3 +41,17 @@ export const saveNote = noteObj => {
 	})
     .then(dispatchStateChangeEvent)
 }
+
+//button click
+//reference specific note by the id
+//removed from api
+//get all notes
+//display notes
+
+export const deleteNote = noteId => {
+    return fetch(`http://localhost:8088/notes/${noteId}`, {
+        method: "DELETE"
+    })
+		.then(getNotes)
+		.then(dispatchStateChangeEvent)
+}

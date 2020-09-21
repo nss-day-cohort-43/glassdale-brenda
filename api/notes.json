@@ -1,28 +1,10 @@
 {
   "notes": [
     {
-      "noteText": "ddd",
-      "suspectId": 1,
-      "date": 1600356524541,
-      "id": 1
-    },
-    {
-      "noteText": "ddd",
-      "suspectId": 1,
-      "date": 1600356549854,
-      "id": 2
-    },
-    {
       "noteText": "Likes to eat pancakes",
       "suspectId": 5,
       "date": 1600357593729,
       "id": 3
-    },
-    {
-      "noteText": "Likes to swim in cold water",
-      "suspectId": 11,
-      "date": 1600358033306,
-      "id": 4
     },
     {
       "noteText": "I should clear these fields",
